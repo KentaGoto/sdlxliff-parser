@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"io/ioutil"
 	"os"
-	"regexp"
 )
 
 // sdlxliffのXMLをパースする構造体
@@ -309,19 +308,16 @@ func main() {
 	fmt.Println("SourceLanguage:", sdl.File.SourceLanguage)
 	fmt.Println("TargetLanguage:", sdl.File.TargetLanguage)
 	if len(sdl.File.Body.Group) > 0 {
-		re := regexp.MustCompile(`\[\{|\sseg\s\d+\s\[\]\s\{\}\s\}]`)
 		for _, gr := range sdl.File.Body.Group {
 			// src
 			for _, mr := range gr.TransUnit.SegSource.Mrk {
 				text := mr.Text
-				replacedText := re.ReplaceAllString(text, "")
-				fmt.Println(replacedText)
+				fmt.Println(text)
 			}
 			// target
 			for _, mr := range gr.TransUnit.Target.Mrk {
 				text := mr.Text
-				replacedText := re.ReplaceAllString(text, "")
-				fmt.Println(replacedText)
+				fmt.Println(text)
 			}
 		}
 	} else {
