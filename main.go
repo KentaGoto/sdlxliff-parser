@@ -303,22 +303,26 @@ func main() {
 	}
 
 	// パースしたデータを表示します
+	fmt.Println()
 	fmt.Println("Original:", sdl.File.Original)
 	fmt.Println("Datatype:", sdl.File.Datatype)
 	fmt.Println("SourceLanguage:", sdl.File.SourceLanguage)
 	fmt.Println("TargetLanguage:", sdl.File.TargetLanguage)
+	fmt.Println()
 	if len(sdl.File.Body.Group) > 0 {
 		for _, gr := range sdl.File.Body.Group {
 			// src
 			for _, mr := range gr.TransUnit.SegSource.Mrk {
 				text := mr.Text
-				fmt.Println(text)
+				fmt.Println("[Source]:", text)
 			}
 			// target
 			for _, mr := range gr.TransUnit.Target.Mrk {
 				text := mr.Text
-				fmt.Println(text)
+				fmt.Println("[Target]:", text)
 			}
+
+			fmt.Println()
 		}
 	} else {
 		fmt.Println("空だよ")
