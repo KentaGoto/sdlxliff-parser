@@ -313,16 +313,22 @@ func main() {
 		for _, gr := range sdl.File.Body.Group {
 			// src
 			for _, mr := range gr.TransUnit.SegSource.Mrk {
-				text := mr.Text
-				fmt.Println("[Source]:", text)
+				if len(mr.Text) > 0 {
+					fmt.Println("[Source]:", mr.Text)
+				} else {
+					for _, mrg := range mr.G {
+						fmt.Println("[Source]:", mrg.Text)
+					}
+				}
 			}
 			// target
 			for _, mr := range gr.TransUnit.Target.Mrk {
-				text := mr.Text
-				fmt.Println("[Target]:", text)
+				if len(mr.Text) > 0 {
+					fmt.Println("[Target]:", mr.Text)
+				} else {
+					fmt.Println("[Target]:", mr.G.Text)
+				}
 			}
-
-			fmt.Println()
 		}
 	} else {
 		fmt.Println("空だよ")
