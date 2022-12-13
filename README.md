@@ -8,6 +8,5 @@ sdlxliffからsourceとtargetを出力する。
 ```
 
 ## ToDo
-- 構造体の分離
-- 対訳にしてHTML出力  
-etc...
+- 構造体の分離 -> いいや  
+- 対訳にしてHTML出力 -> いいや  
