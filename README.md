@@ -33,5 +33,8 @@ To parse an SDLXLIFF file named `sample.sdlxliff`, follow these steps:
 
 After running the parser, the extracted information will be displayed in the terminal.
 
+## License
+MIT
+
 ## Author
 Kenta Goto
