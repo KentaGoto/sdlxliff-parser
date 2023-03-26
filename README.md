@@ -32,3 +32,6 @@ To parse an SDLXLIFF file named `sample.sdlxliff`, follow these steps:
 4. Run the compiled executable using the command `./sdlxliff_parser sample.sdlxliff` on Unix-based systems or `sdlxliff_parser.exe sample.sdlxliff` on Windows.
 
 After running the parser, the extracted information will be displayed in the terminal.
+
+## Author
+Kenta Goto
