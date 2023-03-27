@@ -4,11 +4,6 @@ A simple SDLXLIFF parser written in Go that extracts essential information from 
 
 ## Features
 
-- Extracts the following information from an SDLXLIFF file:
-  - Original
-  - Datatype
-  - Source language
-  - Target language
 - Displays the source and target segments of the file.
 
 ## Requirements
