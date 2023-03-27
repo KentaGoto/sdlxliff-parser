@@ -7,7 +7,7 @@ import (
 	"os"
 )
 
-// sdlxliffのXMLをパースする構造体
+// Structure to parse XML in sdlxliff
 type Xliff struct {
 	XMLName xml.Name `xml:"xliff"`
 	Text    string   `xml:",chardata"`
@@ -284,17 +284,17 @@ type Xliff struct {
 }
 
 func main() {
-	// 対象ファイルを引数に取る
+	// Takes a target file as an argument.
 	fname := os.Args[1]
 
-	// sdlxliffのXMLファイルを読み込みます
+	// Load sdlxliff file.
 	data, err := ioutil.ReadFile(fname)
 	if err != nil {
 		fmt.Println("File reading error", err)
 		return
 	}
 
-	// XMLをパースし、構造体にデータを保存
+	// Parses sdlxliff and stores data in a structure.
 	var sdl Xliff
 	err = xml.Unmarshal(data, &sdl)
 	if err != nil {
@@ -302,7 +302,6 @@ func main() {
 		return
 	}
 
-	// パースしたデータを表示します
 	fmt.Println()
 	fmt.Println("Original:", sdl.File.Original)
 	fmt.Println("Datatype:", sdl.File.Datatype)
@@ -331,6 +330,6 @@ func main() {
 			}
 		}
 	} else {
-		fmt.Println("空だよ")
+		fmt.Println("Empty.")
 	}
 }
